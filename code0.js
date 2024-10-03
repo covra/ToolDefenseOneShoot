@@ -98,11 +98,12 @@ if (isConditionTrue_0) {
 }
 
 
-};gdjs.LoginHyplayCode.userFunc0xc20da0 = function GDJSInlineCode(runtimeScene, objects) {
+};gdjs.LoginHyplayCode.userFunc0x1127ab0 = function GDJSInlineCode(runtimeScene, objects) {
 "use strict";
-    var appId = "ae6b8795-169f-40c9-bf60-a3736dceeffc"; //id del juego de naves
+    var appId = "dce1f803-1a91-466a-b762-50dcff8bc764"; //id del juego de naves
     //var appId = "b15e49b1-db6d-43cc-8f7c-ee157a517da2"; //juego de oneshoot
-    var redirectUri = encodeURIComponent("https://covra.github.io/testHYPLAY/redirect.html"); // Add an empty html file at this URL, and add it to your hyplay app
+    //var redirectUri = encodeURIComponent("https://covra.github.io/testHYPLAY/redirect.html"); //   old ship game Add an empty html file at this URL, and add it to your hyplay app
+    var redirectUri = encodeURIComponent("https://covra.github.io/ToolDefenseOneShoot/redirect.html");
     var url = "https://hyplay.com/oauth/authorize/?appId=" + appId + "&chain=HYCHAIN&responseType=token&redirectUri=" + redirectUri;    
     var interval = null;
 
@@ -163,7 +164,7 @@ gdjs.copyArray(runtimeScene.getObjects("txt_debug1"), gdjs.LoginHyplayCode.GDtxt
 
 var objects = [];
 objects.push.apply(objects,gdjs.LoginHyplayCode.GDtxt_9595debug1Objects2);
-gdjs.LoginHyplayCode.userFunc0xc20da0(runtimeScene, objects);
+gdjs.LoginHyplayCode.userFunc0x1127ab0(runtimeScene, objects);
 
 }
 
@@ -264,7 +265,7 @@ gdjs.LoginHyplayCode.eventsList4(runtimeScene);} //End of subevents
 }
 
 
-};gdjs.LoginHyplayCode.userFunc0x11ac230 = function GDJSInlineCode(runtimeScene) {
+};gdjs.LoginHyplayCode.userFunc0x1130198 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 setTimeout(()=>{
     //Get info variables from response
@@ -339,7 +340,7 @@ let isConditionTrue_0 = false;
 {
 
 
-gdjs.LoginHyplayCode.userFunc0x11ac230(runtimeScene);
+gdjs.LoginHyplayCode.userFunc0x1130198(runtimeScene);
 
 }
 
@@ -432,538 +433,7 @@ gdjs.LoginHyplayCode.eventsList7(runtimeScene);} //End of subevents
 }
 
 
-};gdjs.LoginHyplayCode.userFunc0x11ac8f8 = function GDJSInlineCode(runtimeScene, objects) {
-"use strict";
-const tbd = objects[0];
-const tokenAuth = runtimeScene.getGame().getVariables().get("sessionAccessToken").getAsString();
-const globalUserStruct = runtimeScene.getGame().getVariables().get("currentUser");
-const usernameGlobal = globalUserStruct.getChildNamed("username").getAsString();
-let url = "https://api.hyplay.com/v1/apps/ae6b8795-169f-40c9-bf60-a3736dceeffc/states?key=";
-url = "https://api.hyplay.com/v1/apps/ae6b8795-169f-40c9-bf60-a3736dceeffc/states";
-let urlUser = url + usernameGlobal; 
-
-async function getAppState() {
-  try {
-    const response = await fetch(url, {
-      method: 'GET',
-      headers: {
-        "Content-Type": "application/json",
-        "x-app-authorization": "test_app_sk_qFU3lFRW9-vh8fbGsfsP13_Gu8YVKSLVlFwtFPS2-fgFNesOY155Sfgdp8tOZo4Q",
-        "x-session-authorization": tokenAuth,
-      }
-    });
-
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-
-    const data = await response.json();
-
-    //Respuesta de Hyplay
-    console.log("GetAppState :: response: ",data); // Aquí puedes manejar la respuesta como necesites
-
-          if (data.privateState.resetAccount == undefined ) {
-             //VA AL SET POST
-              runtimeScene.getVariables().get("bIsGetAppState").setBoolean(true);
-              runtimeScene.getVariables().get("bIsSetAppState").setBoolean(false);
-              console.log("GetAppState :: cuenta NO reseteada, va a POST...")
-          } else {
-              //CARGA DATOS
-              runtimeScene.getVariables().get("bIsGetAppState").setBoolean(true);
-              runtimeScene.getVariables().get("bIsSetAppState").setBoolean(true);
-              console.log("GetAppState :: cuenta OK, carga datos")
-              //STR TO NUM
-              let credits = parseInt(data.protectedState.player_param_credits);
-              let repu = parseInt(data.protectedState.player_param_reputation);
-              let level = parseInt(data.protectedState.player_param_contractLvl);
-              let totalScrap = parseInt(data.protectedState.player_param_totalScrap);
-              //SETTINGS
-              let bGameModeStr = data.publicState.player_param_lastModePlayedPC
-              let bGameMode = false;
-              if (bGameModeStr == "true"){bGameMode = true};
-              let bMusicModeStr = data.publicState.player_param_lastMusic
-              let bMusicMode = false;
-              if (bMusicModeStr == "true"){bMusicMode = true};
-              //TO GAME
-              runtimeScene.getGame().getVariables().get("player_param_credits").setNumber(credits)
-              runtimeScene.getGame().getVariables().get("player_param_reputation").setNumber(repu)
-              runtimeScene.getGame().getVariables().get("player_param_contractLvl").setNumber(level)
-              runtimeScene.getGame().getVariables().get("player_param_totalScrap").setNumber(totalScrap)
-              runtimeScene.getGame().getVariables().get("player_param_lastModePlayedPC").setBoolean(bGameMode)
-              runtimeScene.getGame().getVariables().get("player_param_lastMusic").setBoolean(bMusicMode)
-          }
-
-  } catch (error) {
-    console.error('GetAppState :: Error al obtener el estado de la aplicación:', error);
-  }
-}
-
-// Llama a la función para ejecutar la petición
-getAppState();
-
-};
-gdjs.LoginHyplayCode.eventsList9 = function(runtimeScene) {
-
-{
-
-
-var objects = [];
-gdjs.LoginHyplayCode.userFunc0x11ac8f8(runtimeScene, objects);
-
-}
-
-
-};gdjs.LoginHyplayCode.eventsList10 = function(runtimeScene) {
-
-{
-
-
-let isConditionTrue_0 = false;
-isConditionTrue_0 = false;
-{let isConditionTrue_1 = false;
-isConditionTrue_1 = false;
-isConditionTrue_1 = gdjs.evtTools.variable.getVariableBoolean(runtimeScene.getScene().getVariables().getFromIndex(4), true, false);
-if (isConditionTrue_1) {
-isConditionTrue_1 = false;
-isConditionTrue_1 = gdjs.evtTools.variable.getVariableBoolean(runtimeScene.getScene().getVariables().getFromIndex(2), true, false);
-if (isConditionTrue_1) {
-isConditionTrue_1 = false;
-isConditionTrue_1 = gdjs.evtTools.variable.getVariableBoolean(gdjs.VariablesContainer.badVariable, false, false);
-}
-}
-isConditionTrue_0 = isConditionTrue_1;
-}
-if (isConditionTrue_0) {
-isConditionTrue_0 = false;
-{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(19402804);
-}
-}
-if (isConditionTrue_0) {
-
-{ //Subevents
-gdjs.LoginHyplayCode.eventsList9(runtimeScene);} //End of subevents
-}
-
-}
-
-
-{
-
-
-
-}
-
-
-{
-
-
-
-}
-
-
-};gdjs.LoginHyplayCode.userFunc0xc207f8 = function GDJSInlineCode(runtimeScene, objects) {
-"use strict";
-const tbd = objects[0];
-const tokenAuth = runtimeScene.getGame().getVariables().get("sessionAccessToken").getAsString();
-const globalUserStruct = runtimeScene.getGame().getVariables().get("currentUser");
-const usernameGlobal = globalUserStruct.getChildNamed("username").getAsString();
-let urlSetAppState = "https://api.hyplay.com/v1/apps/ae6b8795-169f-40c9-bf60-a3736dceeffc/states";
-
-async function setAppState(newState) {
-  try {
-    const response = await fetch(urlSetAppState, {
-      method: 'POST',
-      headers: {
-        "accept": "application/json",
-        "content-Type": "application/json",
-        "x-app-authorization": "test_app_sk_qFU3lFRW9-vh8fbGsfsP13_Gu8YVKSLVlFwtFPS2-fgFNesOY155Sfgdp8tOZo4Q",
-        "x-session-authorization": tokenAuth,
-      },
-      body: JSON.stringify(newState)
-    });
-
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-
-    const data = await response.json();
-    console.log("SetAppState :: response: ",data); // Aquí puedes manejar la respuesta como necesites
-    runtimeScene.getVariables().get("bIsGetAppState").setBoolean(true);
-                  runtimeScene.getVariables().get("bIsSetAppState").setBoolean(true);
-  } catch (error) {
-    console.error('SetAppState :: response: Error al establecer el estado de la aplicación:', error);
-  }
-}
-
-// Datos base si es nuevo
-const bodyToWriteOrig = {
-
-  "publicState": {
-    "publicData": "none",
-    "player_param_lastModePlayedPC": "true",
-    "player_param_lastMusic": "false"
-  },
-  "protectedState": {
-    "player_param_credits": "0",
-    "player_param_reputation": "0",
-    "player_param_contractLvl": "0",
-    "player_param_totalScrap": "0"
-  },
-  "privateState": {
-    "resetAccount": "false"
-  },
-  "overwrite": true
-};
-
-// Llama a la función para ejecutar la petición
-setAppState(bodyToWriteOrig);
-
-};
-gdjs.LoginHyplayCode.eventsList11 = function(runtimeScene) {
-
-{
-
-
-var objects = [];
-gdjs.LoginHyplayCode.userFunc0xc207f8(runtimeScene, objects);
-
-}
-
-
-};gdjs.LoginHyplayCode.eventsList12 = function(runtimeScene) {
-
-{
-
-
-let isConditionTrue_0 = false;
-isConditionTrue_0 = false;
-{let isConditionTrue_1 = false;
-isConditionTrue_1 = false;
-isConditionTrue_1 = gdjs.evtTools.variable.getVariableBoolean(runtimeScene.getScene().getVariables().getFromIndex(4), true, false);
-if (isConditionTrue_1) {
-isConditionTrue_1 = false;
-isConditionTrue_1 = gdjs.evtTools.variable.getVariableBoolean(runtimeScene.getScene().getVariables().getFromIndex(2), true, false);
-if (isConditionTrue_1) {
-isConditionTrue_1 = false;
-isConditionTrue_1 = gdjs.evtTools.variable.getVariableBoolean(gdjs.VariablesContainer.badVariable, true, false);
-if (isConditionTrue_1) {
-isConditionTrue_1 = false;
-isConditionTrue_1 = gdjs.evtTools.variable.getVariableBoolean(gdjs.VariablesContainer.badVariable, false, false);
-}
-}
-}
-isConditionTrue_0 = isConditionTrue_1;
-}
-if (isConditionTrue_0) {
-isConditionTrue_0 = false;
-{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(19406548);
-}
-}
-if (isConditionTrue_0) {
-
-{ //Subevents
-gdjs.LoginHyplayCode.eventsList11(runtimeScene);} //End of subevents
-}
-
-}
-
-
-{
-
-
-
-}
-
-
-{
-
-
-
-}
-
-
-};gdjs.LoginHyplayCode.eventsList13 = function(runtimeScene) {
-
-{
-
-
-let isConditionTrue_0 = false;
-{
-{/* Unknown object - skipped. */}}
-
-}
-
-
-{
-
-
-gdjs.LoginHyplayCode.eventsList10(runtimeScene);
-}
-
-
-{
-
-
-gdjs.LoginHyplayCode.eventsList12(runtimeScene);
-}
-
-
-{
-
-
-
-}
-
-
-{
-
-
-
-}
-
-
-{
-
-
-
-}
-
-
-{
-
-
-
-}
-
-
-{
-
-
-
-}
-
-
-};gdjs.LoginHyplayCode.eventsList14 = function(runtimeScene) {
-
-{
-
-
-let isConditionTrue_0 = false;
-isConditionTrue_0 = false;
-/* Unknown object - skipped. */if (isConditionTrue_0) {
-{gdjs.evtTools.runtimeScene.replaceScene(runtimeScene, "video", false);
-}}
-
-}
-
-
-};gdjs.LoginHyplayCode.eventsList15 = function(runtimeScene, asyncObjectsList) {
-
-{
-
-
-
-}
-
-
-{
-
-
-let isConditionTrue_0 = false;
-{
-{gdjs.evtTools.runtimeScene.replaceScene(runtimeScene, "video", false);
-}}
-
-}
-
-
-};gdjs.LoginHyplayCode.asyncCallback19444932 = function (runtimeScene, asyncObjectsList) {
-asyncObjectsList.restoreLocalVariablesContainers(gdjs.LoginHyplayCode.localVariables);
-{/* Unknown object - skipped. */}
-{ //Subevents
-gdjs.LoginHyplayCode.eventsList15(runtimeScene, asyncObjectsList);} //End of subevents
-gdjs.LoginHyplayCode.localVariables.length = 0;
-}
-gdjs.LoginHyplayCode.eventsList16 = function(runtimeScene) {
-
-{
-
-
-{
-{
-const asyncObjectsList = new gdjs.LongLivedObjectsList();
-asyncObjectsList.backupLocalVariablesContainers(gdjs.LoginHyplayCode.localVariables);
-runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(3), (runtimeScene) => (gdjs.LoginHyplayCode.asyncCallback19444932(runtimeScene, asyncObjectsList)));
-}
-}
-
-}
-
-
-};gdjs.LoginHyplayCode.eventsList17 = function(runtimeScene) {
-
-{
-
-
-let isConditionTrue_0 = false;
-{
-
-{ //Subevents
-gdjs.LoginHyplayCode.eventsList16(runtimeScene);} //End of subevents
-}
-
-}
-
-
-};gdjs.LoginHyplayCode.eventsList18 = function(runtimeScene, asyncObjectsList) {
-
-{
-
-
-
-}
-
-
-{
-
-
-let isConditionTrue_0 = false;
-{
-{gdjs.evtTools.runtimeScene.replaceScene(runtimeScene, "video", false);
-}}
-
-}
-
-
-};gdjs.LoginHyplayCode.asyncCallback19448868 = function (runtimeScene, asyncObjectsList) {
-asyncObjectsList.restoreLocalVariablesContainers(gdjs.LoginHyplayCode.localVariables);
-{/* Unknown object - skipped. */}
-{ //Subevents
-gdjs.LoginHyplayCode.eventsList18(runtimeScene, asyncObjectsList);} //End of subevents
-gdjs.LoginHyplayCode.localVariables.length = 0;
-}
-gdjs.LoginHyplayCode.eventsList19 = function(runtimeScene) {
-
-{
-
-
-{
-{
-const asyncObjectsList = new gdjs.LongLivedObjectsList();
-asyncObjectsList.backupLocalVariablesContainers(gdjs.LoginHyplayCode.localVariables);
-runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(1), (runtimeScene) => (gdjs.LoginHyplayCode.asyncCallback19448868(runtimeScene, asyncObjectsList)));
-}
-}
-
-}
-
-
-};gdjs.LoginHyplayCode.eventsList20 = function(runtimeScene) {
-
-{
-
-
-let isConditionTrue_0 = false;
-{
-
-{ //Subevents
-gdjs.LoginHyplayCode.eventsList19(runtimeScene);} //End of subevents
-}
-
-}
-
-
-};gdjs.LoginHyplayCode.eventsList21 = function(runtimeScene) {
-
-{
-
-
-let isConditionTrue_0 = false;
-isConditionTrue_0 = false;
-{let isConditionTrue_1 = false;
-isConditionTrue_1 = false;
-isConditionTrue_1 = gdjs.evtTools.variable.getVariableBoolean(runtimeScene.getScene().getVariables().getFromIndex(4), true, false);
-if (isConditionTrue_1) {
-isConditionTrue_1 = false;
-isConditionTrue_1 = gdjs.evtTools.variable.getVariableBoolean(runtimeScene.getScene().getVariables().getFromIndex(2), true, false);
-if (isConditionTrue_1) {
-isConditionTrue_1 = false;
-isConditionTrue_1 = gdjs.evtTools.variable.getVariableBoolean(gdjs.VariablesContainer.badVariable, true, false);
-if (isConditionTrue_1) {
-isConditionTrue_1 = false;
-isConditionTrue_1 = gdjs.evtTools.variable.getVariableBoolean(gdjs.VariablesContainer.badVariable, true, false);
-}
-}
-}
-isConditionTrue_0 = isConditionTrue_1;
-}
-if (isConditionTrue_0) {
-isConditionTrue_0 = false;
-{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(19445060);
-}
-}
-if (isConditionTrue_0) {
-
-{ //Subevents
-gdjs.LoginHyplayCode.eventsList17(runtimeScene);} //End of subevents
-}
-
-}
-
-
-{
-
-
-let isConditionTrue_0 = false;
-isConditionTrue_0 = false;
-{let isConditionTrue_1 = false;
-isConditionTrue_1 = false;
-isConditionTrue_1 = gdjs.evtTools.variable.getVariableBoolean(runtimeScene.getScene().getVariables().getFromIndex(4), true, false);
-if (isConditionTrue_1) {
-isConditionTrue_1 = false;
-isConditionTrue_1 = gdjs.evtTools.variable.getVariableBoolean(runtimeScene.getScene().getVariables().getFromIndex(2), true, false);
-if (isConditionTrue_1) {
-isConditionTrue_1 = false;
-isConditionTrue_1 = gdjs.evtTools.variable.getVariableBoolean(gdjs.VariablesContainer.badVariable, true, false);
-if (isConditionTrue_1) {
-isConditionTrue_1 = false;
-isConditionTrue_1 = gdjs.evtTools.variable.getVariableBoolean(gdjs.VariablesContainer.badVariable, true, false);
-}
-}
-}
-isConditionTrue_0 = isConditionTrue_1;
-}
-if (isConditionTrue_0) {
-isConditionTrue_0 = false;
-{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(19447972);
-}
-}
-if (isConditionTrue_0) {
-
-{ //Subevents
-gdjs.LoginHyplayCode.eventsList20(runtimeScene);} //End of subevents
-}
-
-}
-
-
-};gdjs.LoginHyplayCode.eventsList22 = function(runtimeScene) {
-
-{
-
-
-gdjs.LoginHyplayCode.eventsList14(runtimeScene);
-}
-
-
-{
-
-
-gdjs.LoginHyplayCode.eventsList21(runtimeScene);
-}
-
-
-};gdjs.LoginHyplayCode.eventsList23 = function(runtimeScene) {
+};gdjs.LoginHyplayCode.eventsList9 = function(runtimeScene) {
 
 {
 
@@ -982,14 +452,14 @@ gdjs.LoginHyplayCode.eventsList8(runtimeScene);
 {
 
 
-gdjs.LoginHyplayCode.eventsList13(runtimeScene);
+
 }
 
 
 {
 
 
-gdjs.LoginHyplayCode.eventsList22(runtimeScene);
+
 }
 
 
@@ -1023,7 +493,7 @@ gdjs.LoginHyplayCode.GDtxt_9595fpsTitleObjects2.length = 0;
 gdjs.LoginHyplayCode.GDtxt_9595fpsTitleObjects3.length = 0;
 gdjs.LoginHyplayCode.GDtxt_9595fpsTitleObjects4.length = 0;
 
-gdjs.LoginHyplayCode.eventsList23(runtimeScene);
+gdjs.LoginHyplayCode.eventsList9(runtimeScene);
 gdjs.LoginHyplayCode.GDtxt_9595debug1Objects1.length = 0;
 gdjs.LoginHyplayCode.GDtxt_9595debug1Objects2.length = 0;
 gdjs.LoginHyplayCode.GDtxt_9595debug1Objects3.length = 0;

@@ -114,8 +114,8 @@ gdjs.LeaderboardCode.eventsList0 = function(runtimeScene) {
 
 let isConditionTrue_0 = false;
 {
-{runtimeScene.getScene().getVariables().getFromIndex(6).getChild("playerId").setString(gdjs.evtTools.variable.getVariableString(runtimeScene.getGame().getVariables().get("currentUser").getChild("username")));
-}{runtimeScene.getScene().getVariables().getFromIndex(6).getChild("name").setString(gdjs.evtTools.variable.getVariableString(runtimeScene.getGame().getVariables().get("currentUser").getChild("username")));
+{runtimeScene.getScene().getVariables().getFromIndex(6).getChild("playerId").setString(gdjs.evtTools.variable.getVariableString(runtimeScene.getGame().getVariables().getFromIndex(1).getChild("username")));
+}{runtimeScene.getScene().getVariables().getFromIndex(6).getChild("name").setString(gdjs.evtTools.variable.getVariableString(runtimeScene.getGame().getVariables().getFromIndex(1).getChild("username")));
 }{runtimeScene.getScene().getVariables().getFromIndex(6).getChild("score").setNumber(0);
 }}
 
@@ -266,10 +266,10 @@ gdjs.copyArray(runtimeScene.getObjects("txt_title"), gdjs.LeaderboardCode.GDtxt_
 gdjs.copyArray(runtimeScene.getObjects("txt_title2"), gdjs.LeaderboardCode.GDtxt_9595title2Objects2);
 gdjs.copyArray(runtimeScene.getObjects("txt_title3"), gdjs.LeaderboardCode.GDtxt_9595title3Objects2);
 {for(var i = 0, len = gdjs.LeaderboardCode.GDtxt_9595titleObjects2.length ;i < len;++i) {
-    gdjs.LeaderboardCode.GDtxt_9595titleObjects2[i].getBehavior("Text").setText("");
+    gdjs.LeaderboardCode.GDtxt_9595titleObjects2[i].getBehavior("Text").setText(runtimeScene.getGame().getVariables().getFromIndex(1).getChild("id").getAsString());
 }
 }{for(var i = 0, len = gdjs.LeaderboardCode.GDtxt_9595title2Objects2.length ;i < len;++i) {
-    gdjs.LeaderboardCode.GDtxt_9595title2Objects2[i].getBehavior("Text").setText("");
+    gdjs.LeaderboardCode.GDtxt_9595title2Objects2[i].getBehavior("Text").setText(runtimeScene.getGame().getVariables().getFromIndex(1).getChild("username").getAsString());
 }
 }{for(var i = 0, len = gdjs.LeaderboardCode.GDtxt_9595title3Objects2.length ;i < len;++i) {
     gdjs.LeaderboardCode.GDtxt_9595title3Objects2[i].getBehavior("Text").setText("");
@@ -298,8 +298,8 @@ let isConditionTrue_0 = false;
 {
 gdjs.copyArray(runtimeScene.getObjects("IDIputFake"), gdjs.LeaderboardCode.GDIDIputFakeObjects2);
 gdjs.copyArray(runtimeScene.getObjects("scoreInputFake"), gdjs.LeaderboardCode.GDscoreInputFakeObjects2);
-{gdjs.VariablesContainer.badVariable.setString((( gdjs.LeaderboardCode.GDIDIputFakeObjects2.length === 0 ) ? "" :gdjs.LeaderboardCode.GDIDIputFakeObjects2[0].getText()));
-}{gdjs.VariablesContainer.badVariable.setString((( gdjs.LeaderboardCode.GDIDIputFakeObjects2.length === 0 ) ? "" :gdjs.LeaderboardCode.GDIDIputFakeObjects2[0].getText()));
+{runtimeScene.getGame().getVariables().getFromIndex(1).getChild("id").setString((( gdjs.LeaderboardCode.GDIDIputFakeObjects2.length === 0 ) ? "" :gdjs.LeaderboardCode.GDIDIputFakeObjects2[0].getText()));
+}{runtimeScene.getGame().getVariables().getFromIndex(1).getChild("username").setString((( gdjs.LeaderboardCode.GDIDIputFakeObjects2.length === 0 ) ? "" :gdjs.LeaderboardCode.GDIDIputFakeObjects2[0].getText()));
 }{gdjs.VariablesContainer.badVariable.setNumber(gdjs.evtTools.common.toNumber((( gdjs.LeaderboardCode.GDscoreInputFakeObjects2.length === 0 ) ? "" :gdjs.LeaderboardCode.GDscoreInputFakeObjects2[0].getText())));
 }
 { //Subevents

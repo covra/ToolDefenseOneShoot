@@ -1829,7 +1829,7 @@ gdjs.level1Code.eventsList26(runtimeScene);} //End of subevents
 }
 
 
-};gdjs.level1Code.userFunc0xc20b78 = function GDJSInlineCode(runtimeScene, objects) {
+};gdjs.level1Code.userFunc0x11543d0 = function GDJSInlineCode(runtimeScene, objects) {
 "use strict";
 var arrayNodos = objects;
 var arrayNpcs = runtimeScene.getObjects("spr_npc")
@@ -1878,7 +1878,7 @@ gdjs.copyArray(runtimeScene.getObjects("spr_nodo"), gdjs.level1Code.GDspr_9595no
 
 var objects = [];
 objects.push.apply(objects,gdjs.level1Code.GDspr_9595nodoObjects3);
-gdjs.level1Code.userFunc0xc20b78(runtimeScene, objects);
+gdjs.level1Code.userFunc0x11543d0(runtimeScene, objects);
 
 }
 
@@ -3073,7 +3073,7 @@ gdjs.level1Code.eventsList54(runtimeScene);
 }
 
 
-};gdjs.level1Code.userFunc0x11efe60 = function GDJSInlineCode(runtimeScene, objects) {
+};gdjs.level1Code.userFunc0x114dba0 = function GDJSInlineCode(runtimeScene, objects) {
 "use strict";
 //Definiciones
 const arma1 = objects[0];
@@ -3168,7 +3168,7 @@ gdjs.copyArray(runtimeScene.getObjects("spr_arma1_test"), gdjs.level1Code.GDspr_
 
 var objects = [];
 objects.push.apply(objects,gdjs.level1Code.GDspr_9595arma1_9595testObjects1);
-gdjs.level1Code.userFunc0x11efe60(runtimeScene, objects);
+gdjs.level1Code.userFunc0x114dba0(runtimeScene, objects);
 
 }
 

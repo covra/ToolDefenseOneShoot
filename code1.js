@@ -73,7 +73,7 @@ for (var i = 0, k = 0, l = gdjs.MenuMapCode.GDbtn_9595levelObjects1.length;i<l;+
 }
 gdjs.MenuMapCode.GDbtn_9595levelObjects1.length = k;
 if (isConditionTrue_0) {
-{gdjs.evtTools.sound.playSound(runtimeScene, "da0877017d351d77a464918a156e243162bb0b7e56598a0812ad49a1e6300e94_Click_01.aac", false, 60, 1);
+{gdjs.evtTools.sound.playSound(runtimeScene, "assets\\Music\\Click_01.aac", false, 60, 1);
 }
 { //Subevents
 gdjs.MenuMapCode.eventsList1(runtimeScene);} //End of subevents
@@ -89,7 +89,7 @@ let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
 isConditionTrue_0 = gdjs.evtTools.runtimeScene.sceneJustBegins(runtimeScene);
 if (isConditionTrue_0) {
-{gdjs.evtTools.sound.playMusic(runtimeScene, "assets\\Menu.aac", true, 50, 0.8);
+{gdjs.evtTools.sound.playMusic(runtimeScene, "assets\\Music\\Menu.aac", true, 50, 0.8);
 }}
 
 }

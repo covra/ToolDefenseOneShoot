@@ -1,26 +1,22 @@
 
-if (typeof gdjs.evtsExt__AdvancedHTTP__SetFormDataRequestBody !== "undefined") {
-  gdjs.evtsExt__AdvancedHTTP__SetFormDataRequestBody.registeredGdjsCallbacks.forEach(callback =>
+if (typeof gdjs.evtsExt__Flash__ColorTint !== "undefined") {
+  gdjs.evtsExt__Flash__ColorTint.registeredGdjsCallbacks.forEach(callback =>
     gdjs._unregisterCallback(callback)
   );
 }
 
-gdjs.evtsExt__AdvancedHTTP__SetFormDataRequestBody = {};
+gdjs.evtsExt__Flash__ColorTint = {};
+gdjs.evtsExt__Flash__ColorTint.GDObjectObjects1= [];
 
 
-gdjs.evtsExt__AdvancedHTTP__SetFormDataRequestBody.userFunc0x889a50 = function GDJSInlineCode(runtimeScene, eventsFunctionContext) {
+gdjs.evtsExt__Flash__ColorTint.userFunc0x953710 = function GDJSInlineCode(runtimeScene, objects, eventsFunctionContext) {
 "use strict";
-gdjs.Variable.copy(
-    eventsFunctionContext.getArgument("Body"),
-    runtimeScene.getGame().getVariables().get("__AdvancedHTTP")
-        .getChild("Requests")
-        .getChild(eventsFunctionContext.getArgument("Request"))
-        .getChild("FormData"),
-    /* mergeVariables = */true
-);
-
+/** @type {gdjs.SpriteRuntimeObject} */
+const tintedObject = objects[0];
+const tint = tintedObject.getColor();
+eventsFunctionContext.returnValue = tint;
 };
-gdjs.evtsExt__AdvancedHTTP__SetFormDataRequestBody.eventsList0 = function(runtimeScene, eventsFunctionContext) {
+gdjs.evtsExt__Flash__ColorTint.eventsList0 = function(runtimeScene, eventsFunctionContext) {
 
 {
 
@@ -31,24 +27,29 @@ gdjs.evtsExt__AdvancedHTTP__SetFormDataRequestBody.eventsList0 = function(runtim
 
 {
 
+gdjs.copyArray(eventsFunctionContext.getObjects("Object"), gdjs.evtsExt__Flash__ColorTint.GDObjectObjects1);
 
-gdjs.evtsExt__AdvancedHTTP__SetFormDataRequestBody.userFunc0x889a50(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
+var objects = [];
+objects.push.apply(objects,gdjs.evtsExt__Flash__ColorTint.GDObjectObjects1);
+gdjs.evtsExt__Flash__ColorTint.userFunc0x953710(runtimeScene, objects, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
 
 }
 
 
 };
 
-gdjs.evtsExt__AdvancedHTTP__SetFormDataRequestBody.func = function(runtimeScene, Request, Body, parentEventsFunctionContext) {
+gdjs.evtsExt__Flash__ColorTint.func = function(runtimeScene, Object, parentEventsFunctionContext) {
 var eventsFunctionContext = {
   _objectsMap: {
+"Object": Object
 },
   _objectArraysMap: {
+"Object": gdjs.objectsListsToArray(Object)
 },
   _behaviorNamesMap: {
 },
-  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("AdvancedHTTP"),
-  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("AdvancedHTTP"),
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("Flash"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("Flash"),
   localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
@@ -87,18 +88,18 @@ parentEventsFunctionContext.getInstancesCountOnScene(objectName) :
     return runtimeScene.getLayer(layerName);
   },
   getArgument: function(argName) {
-if (argName === "Request") return Request;
-if (argName === "Body") return Body;
     return "";
   },
   getOnceTriggers: function() { return runtimeScene.getOnceTriggers(); }
 };
 
+gdjs.evtsExt__Flash__ColorTint.GDObjectObjects1.length = 0;
 
-gdjs.evtsExt__AdvancedHTTP__SetFormDataRequestBody.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__Flash__ColorTint.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__Flash__ColorTint.GDObjectObjects1.length = 0;
 
 
-return;
+return "" + eventsFunctionContext.returnValue;
 }
 
-gdjs.evtsExt__AdvancedHTTP__SetFormDataRequestBody.registeredGdjsCallbacks = [];
+gdjs.evtsExt__Flash__ColorTint.registeredGdjsCallbacks = [];

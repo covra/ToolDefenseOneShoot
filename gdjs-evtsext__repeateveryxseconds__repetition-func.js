@@ -1,45 +1,28 @@
 
-if (typeof gdjs.evtsExt__AdvancedHTTP__SetFormDataRequestBody !== "undefined") {
-  gdjs.evtsExt__AdvancedHTTP__SetFormDataRequestBody.registeredGdjsCallbacks.forEach(callback =>
+if (typeof gdjs.evtsExt__RepeatEveryXSeconds__Repetition !== "undefined") {
+  gdjs.evtsExt__RepeatEveryXSeconds__Repetition.registeredGdjsCallbacks.forEach(callback =>
     gdjs._unregisterCallback(callback)
   );
 }
 
-gdjs.evtsExt__AdvancedHTTP__SetFormDataRequestBody = {};
+gdjs.evtsExt__RepeatEveryXSeconds__Repetition = {};
 
 
-gdjs.evtsExt__AdvancedHTTP__SetFormDataRequestBody.userFunc0x889a50 = function GDJSInlineCode(runtimeScene, eventsFunctionContext) {
-"use strict";
-gdjs.Variable.copy(
-    eventsFunctionContext.getArgument("Body"),
-    runtimeScene.getGame().getVariables().get("__AdvancedHTTP")
-        .getChild("Requests")
-        .getChild(eventsFunctionContext.getArgument("Request"))
-        .getChild("FormData"),
-    /* mergeVariables = */true
-);
-
-};
-gdjs.evtsExt__AdvancedHTTP__SetFormDataRequestBody.eventsList0 = function(runtimeScene, eventsFunctionContext) {
+gdjs.evtsExt__RepeatEveryXSeconds__Repetition.eventsList0 = function(runtimeScene, eventsFunctionContext) {
 
 {
 
 
-
-}
-
-
+let isConditionTrue_0 = false;
 {
-
-
-gdjs.evtsExt__AdvancedHTTP__SetFormDataRequestBody.userFunc0x889a50(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
+{if (typeof eventsFunctionContext !== 'undefined') { eventsFunctionContext.returnValue = gdjs.evtTools.variable.getVariableNumber(runtimeScene.getScene().getVariables().get("__RepeatEveryXSeconds").getChild("Repetitions").getChild(eventsFunctionContext.getArgument("TimerName"))); }}}
 
 }
 
 
 };
 
-gdjs.evtsExt__AdvancedHTTP__SetFormDataRequestBody.func = function(runtimeScene, Request, Body, parentEventsFunctionContext) {
+gdjs.evtsExt__RepeatEveryXSeconds__Repetition.func = function(runtimeScene, TimerName, parentEventsFunctionContext) {
 var eventsFunctionContext = {
   _objectsMap: {
 },
@@ -47,8 +30,8 @@ var eventsFunctionContext = {
 },
   _behaviorNamesMap: {
 },
-  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("AdvancedHTTP"),
-  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("AdvancedHTTP"),
+  globalVariablesForExtension: runtimeScene.getGame().getVariablesForExtension("RepeatEveryXSeconds"),
+  sceneVariablesForExtension: runtimeScene.getScene().getVariablesForExtension("RepeatEveryXSeconds"),
   localVariables: [],
   getObjects: function(objectName) {
     return eventsFunctionContext._objectArraysMap[objectName] || [];
@@ -87,18 +70,17 @@ parentEventsFunctionContext.getInstancesCountOnScene(objectName) :
     return runtimeScene.getLayer(layerName);
   },
   getArgument: function(argName) {
-if (argName === "Request") return Request;
-if (argName === "Body") return Body;
+if (argName === "TimerName") return TimerName;
     return "";
   },
   getOnceTriggers: function() { return runtimeScene.getOnceTriggers(); }
 };
 
 
-gdjs.evtsExt__AdvancedHTTP__SetFormDataRequestBody.eventsList0(runtimeScene, eventsFunctionContext);
+gdjs.evtsExt__RepeatEveryXSeconds__Repetition.eventsList0(runtimeScene, eventsFunctionContext);
 
 
-return;
+return Number(eventsFunctionContext.returnValue) || 0;
 }
 
-gdjs.evtsExt__AdvancedHTTP__SetFormDataRequestBody.registeredGdjsCallbacks = [];
+gdjs.evtsExt__RepeatEveryXSeconds__Repetition.registeredGdjsCallbacks = [];

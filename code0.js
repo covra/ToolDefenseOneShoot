@@ -8,6 +8,14 @@ gdjs.LoginHyplayCode.GDloginObjects1= [];
 gdjs.LoginHyplayCode.GDloginObjects2= [];
 gdjs.LoginHyplayCode.GDloginObjects3= [];
 gdjs.LoginHyplayCode.GDloginObjects4= [];
+gdjs.LoginHyplayCode.GDtxt_9595nfoObjects1= [];
+gdjs.LoginHyplayCode.GDtxt_9595nfoObjects2= [];
+gdjs.LoginHyplayCode.GDtxt_9595nfoObjects3= [];
+gdjs.LoginHyplayCode.GDtxt_9595nfoObjects4= [];
+gdjs.LoginHyplayCode.GDspr_9595coverObjects1= [];
+gdjs.LoginHyplayCode.GDspr_9595coverObjects2= [];
+gdjs.LoginHyplayCode.GDspr_9595coverObjects3= [];
+gdjs.LoginHyplayCode.GDspr_9595coverObjects4= [];
 gdjs.LoginHyplayCode.GDvtn_9595reloadObjects1= [];
 gdjs.LoginHyplayCode.GDvtn_9595reloadObjects2= [];
 gdjs.LoginHyplayCode.GDvtn_9595reloadObjects3= [];
@@ -98,7 +106,7 @@ if (isConditionTrue_0) {
 }
 
 
-};gdjs.LoginHyplayCode.userFunc0xe153d8 = function GDJSInlineCode(runtimeScene, objects) {
+};gdjs.LoginHyplayCode.userFunc0x105a0a0 = function GDJSInlineCode(runtimeScene, objects) {
 "use strict";
     var appId = "dce1f803-1a91-466a-b762-50dcff8bc764"; //id del juego de naves
     //var appId = "b15e49b1-db6d-43cc-8f7c-ee157a517da2"; //juego de oneshoot
@@ -164,7 +172,7 @@ gdjs.copyArray(runtimeScene.getObjects("txt_debug1"), gdjs.LoginHyplayCode.GDtxt
 
 var objects = [];
 objects.push.apply(objects,gdjs.LoginHyplayCode.GDtxt_9595debug1Objects2);
-gdjs.LoginHyplayCode.userFunc0xe153d8(runtimeScene, objects);
+gdjs.LoginHyplayCode.userFunc0x105a0a0(runtimeScene, objects);
 
 }
 
@@ -193,7 +201,7 @@ gdjs.LoginHyplayCode.eventsList1(runtimeScene);
 }
 
 
-};gdjs.LoginHyplayCode.asyncCallback14117292 = function (runtimeScene, asyncObjectsList) {
+};gdjs.LoginHyplayCode.asyncCallback14418636 = function (runtimeScene, asyncObjectsList) {
 asyncObjectsList.restoreLocalVariablesContainers(gdjs.LoginHyplayCode.localVariables);
 gdjs.LoginHyplayCode.localVariables.length = 0;
 }
@@ -206,7 +214,7 @@ gdjs.LoginHyplayCode.eventsList3 = function(runtimeScene) {
 {
 const asyncObjectsList = new gdjs.LongLivedObjectsList();
 asyncObjectsList.backupLocalVariablesContainers(gdjs.LoginHyplayCode.localVariables);
-runtimeScene.getAsyncTasksManager().addTask(gdjs.evtsExt__AdvancedHTTP__ExecuteRequest.func(runtimeScene, "HYPLAYGetUser", runtimeScene.getScene().getVariables().getFromIndex(0), (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined)), (runtimeScene) => (gdjs.LoginHyplayCode.asyncCallback14117292(runtimeScene, asyncObjectsList)));
+runtimeScene.getAsyncTasksManager().addTask(gdjs.evtsExt__AdvancedHTTP__ExecuteRequest.func(runtimeScene, "HYPLAYGetUser", runtimeScene.getScene().getVariables().getFromIndex(0), (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined)), (runtimeScene) => (gdjs.LoginHyplayCode.asyncCallback14418636(runtimeScene, asyncObjectsList)));
 }
 }
 
@@ -265,7 +273,7 @@ gdjs.LoginHyplayCode.eventsList4(runtimeScene);} //End of subevents
 }
 
 
-};gdjs.LoginHyplayCode.userFunc0xe136d0 = function GDJSInlineCode(runtimeScene) {
+};gdjs.LoginHyplayCode.userFunc0x105be30 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 setTimeout(()=>{
     //Get info variables from response
@@ -340,12 +348,12 @@ let isConditionTrue_0 = false;
 {
 
 
-gdjs.LoginHyplayCode.userFunc0xe136d0(runtimeScene);
+gdjs.LoginHyplayCode.userFunc0x105be30(runtimeScene);
 
 }
 
 
-};gdjs.LoginHyplayCode.asyncCallback14119060 = function (runtimeScene, asyncObjectsList) {
+};gdjs.LoginHyplayCode.asyncCallback14420404 = function (runtimeScene, asyncObjectsList) {
 asyncObjectsList.restoreLocalVariablesContainers(gdjs.LoginHyplayCode.localVariables);
 {gdjs.evtTools.debuggerTools.log("Response from hyplay: " + runtimeScene.getScene().getVariables().getFromIndex(0).getAsString(), "info", "");
 }
@@ -362,7 +370,7 @@ gdjs.LoginHyplayCode.eventsList7 = function(runtimeScene) {
 {
 const asyncObjectsList = new gdjs.LongLivedObjectsList();
 asyncObjectsList.backupLocalVariablesContainers(gdjs.LoginHyplayCode.localVariables);
-runtimeScene.getAsyncTasksManager().addTask(gdjs.evtsExt__AdvancedHTTP__ReadResponseJSON.func(runtimeScene, runtimeScene.getScene().getVariables().getFromIndex(0), runtimeScene.getScene().getVariables().getFromIndex(3), (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined)), (runtimeScene) => (gdjs.LoginHyplayCode.asyncCallback14119060(runtimeScene, asyncObjectsList)));
+runtimeScene.getAsyncTasksManager().addTask(gdjs.evtsExt__AdvancedHTTP__ReadResponseJSON.func(runtimeScene, runtimeScene.getScene().getVariables().getFromIndex(0), runtimeScene.getScene().getVariables().getFromIndex(3), (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined)), (runtimeScene) => (gdjs.LoginHyplayCode.asyncCallback14420404(runtimeScene, asyncObjectsList)));
 }
 }
 
@@ -387,7 +395,7 @@ for (var i = 0, k = 0, l = gdjs.LoginHyplayCode.GDloginObjects2.length;i<l;++i) 
 gdjs.LoginHyplayCode.GDloginObjects2.length = k;
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
-{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(14107884);
+{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(14409228);
 }
 }
 if (isConditionTrue_0) {
@@ -421,7 +429,7 @@ isConditionTrue_0 = false;
 isConditionTrue_0 = gdjs.evtsExt__AdvancedHTTP__ResponseSuccess.func(runtimeScene, runtimeScene.getScene().getVariables().getFromIndex(0), (typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined));
 if (isConditionTrue_0) {
 isConditionTrue_0 = false;
-{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(14117836);
+{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(14419180);
 }
 }
 if (isConditionTrue_0) {
@@ -476,6 +484,14 @@ gdjs.LoginHyplayCode.GDloginObjects1.length = 0;
 gdjs.LoginHyplayCode.GDloginObjects2.length = 0;
 gdjs.LoginHyplayCode.GDloginObjects3.length = 0;
 gdjs.LoginHyplayCode.GDloginObjects4.length = 0;
+gdjs.LoginHyplayCode.GDtxt_9595nfoObjects1.length = 0;
+gdjs.LoginHyplayCode.GDtxt_9595nfoObjects2.length = 0;
+gdjs.LoginHyplayCode.GDtxt_9595nfoObjects3.length = 0;
+gdjs.LoginHyplayCode.GDtxt_9595nfoObjects4.length = 0;
+gdjs.LoginHyplayCode.GDspr_9595coverObjects1.length = 0;
+gdjs.LoginHyplayCode.GDspr_9595coverObjects2.length = 0;
+gdjs.LoginHyplayCode.GDspr_9595coverObjects3.length = 0;
+gdjs.LoginHyplayCode.GDspr_9595coverObjects4.length = 0;
 gdjs.LoginHyplayCode.GDvtn_9595reloadObjects1.length = 0;
 gdjs.LoginHyplayCode.GDvtn_9595reloadObjects2.length = 0;
 gdjs.LoginHyplayCode.GDvtn_9595reloadObjects3.length = 0;
@@ -502,6 +518,14 @@ gdjs.LoginHyplayCode.GDloginObjects1.length = 0;
 gdjs.LoginHyplayCode.GDloginObjects2.length = 0;
 gdjs.LoginHyplayCode.GDloginObjects3.length = 0;
 gdjs.LoginHyplayCode.GDloginObjects4.length = 0;
+gdjs.LoginHyplayCode.GDtxt_9595nfoObjects1.length = 0;
+gdjs.LoginHyplayCode.GDtxt_9595nfoObjects2.length = 0;
+gdjs.LoginHyplayCode.GDtxt_9595nfoObjects3.length = 0;
+gdjs.LoginHyplayCode.GDtxt_9595nfoObjects4.length = 0;
+gdjs.LoginHyplayCode.GDspr_9595coverObjects1.length = 0;
+gdjs.LoginHyplayCode.GDspr_9595coverObjects2.length = 0;
+gdjs.LoginHyplayCode.GDspr_9595coverObjects3.length = 0;
+gdjs.LoginHyplayCode.GDspr_9595coverObjects4.length = 0;
 gdjs.LoginHyplayCode.GDvtn_9595reloadObjects1.length = 0;
 gdjs.LoginHyplayCode.GDvtn_9595reloadObjects2.length = 0;
 gdjs.LoginHyplayCode.GDvtn_9595reloadObjects3.length = 0;

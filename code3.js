@@ -1580,7 +1580,7 @@ gdjs.level1Code.eventsList24(runtimeScene);} //End of subevents
 }
 
 
-};gdjs.level1Code.userFunc0x1072c20 = function GDJSInlineCode(runtimeScene, objects) {
+};gdjs.level1Code.userFunc0x42c65d0 = function GDJSInlineCode(runtimeScene, objects) {
 "use strict";
 var arrayNodos = objects;
 var arrayNpcs = runtimeScene.getObjects("spr_npc")
@@ -1629,7 +1629,7 @@ gdjs.copyArray(runtimeScene.getObjects("spr_nodo"), gdjs.level1Code.GDspr_9595no
 
 var objects = [];
 objects.push.apply(objects,gdjs.level1Code.GDspr_9595nodoObjects3);
-gdjs.level1Code.userFunc0x1072c20(runtimeScene, objects);
+gdjs.level1Code.userFunc0x42c65d0(runtimeScene, objects);
 
 }
 
@@ -2825,7 +2825,7 @@ gdjs.level1Code.eventsList52(runtimeScene);
 
 
 };gdjs.level1Code.mapOfGDgdjs_9546level1Code_9546GDspr_95959595tool_95959595test2Objects3Objects = Hashtable.newFrom({"spr_tool_test2": gdjs.level1Code.GDspr_9595tool_9595test2Objects3});
-gdjs.level1Code.userFunc0x106fb98 = function GDJSInlineCode(runtimeScene, objects) {
+gdjs.level1Code.userFunc0x42c1490 = function GDJSInlineCode(runtimeScene, objects) {
 "use strict";
 const id = runtimeScene.getVariables().get("idToolSpawn").getAsNumber();
 let thisObj = null;
@@ -2903,7 +2903,7 @@ gdjs.copyArray(runtimeScene.getObjects("spr_tool_test2"), gdjs.level1Code.GDspr_
 
 var objects = [];
 objects.push.apply(objects,gdjs.level1Code.GDspr_9595tool_9595test2Objects3);
-gdjs.level1Code.userFunc0x106fb98(runtimeScene, objects);
+gdjs.level1Code.userFunc0x42c1490(runtimeScene, objects);
 
 }
 

@@ -104,7 +104,7 @@ let isConditionTrue_0 = false;
 }
 
 
-};gdjs.MenuMapCode.asyncCallback14488812 = function (runtimeScene, asyncObjectsList) {
+};gdjs.MenuMapCode.asyncCallback14768348 = function (runtimeScene, asyncObjectsList) {
 asyncObjectsList.restoreLocalVariablesContainers(gdjs.MenuMapCode.localVariables);
 
 { //Subevents
@@ -120,7 +120,7 @@ gdjs.MenuMapCode.eventsList3 = function(runtimeScene) {
 {
 const asyncObjectsList = new gdjs.LongLivedObjectsList();
 asyncObjectsList.backupLocalVariablesContainers(gdjs.MenuMapCode.localVariables);
-runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(0.3), (runtimeScene) => (gdjs.MenuMapCode.asyncCallback14488812(runtimeScene, asyncObjectsList)));
+runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(0.3), (runtimeScene) => (gdjs.MenuMapCode.asyncCallback14768348(runtimeScene, asyncObjectsList)));
 }
 }
 
@@ -140,7 +140,7 @@ let isConditionTrue_0 = false;
 }
 
 
-};gdjs.MenuMapCode.asyncCallback14490348 = function (runtimeScene, asyncObjectsList) {
+};gdjs.MenuMapCode.asyncCallback14769884 = function (runtimeScene, asyncObjectsList) {
 asyncObjectsList.restoreLocalVariablesContainers(gdjs.MenuMapCode.localVariables);
 
 { //Subevents
@@ -156,7 +156,7 @@ gdjs.MenuMapCode.eventsList5 = function(runtimeScene) {
 {
 const asyncObjectsList = new gdjs.LongLivedObjectsList();
 asyncObjectsList.backupLocalVariablesContainers(gdjs.MenuMapCode.localVariables);
-runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(0.3), (runtimeScene) => (gdjs.MenuMapCode.asyncCallback14490348(runtimeScene, asyncObjectsList)));
+runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(0.3), (runtimeScene) => (gdjs.MenuMapCode.asyncCallback14769884(runtimeScene, asyncObjectsList)));
 }
 }
 
@@ -251,7 +251,7 @@ gdjs.MenuMapCode.eventsList5(runtimeScene);} //End of subevents
 }
 
 
-};gdjs.MenuMapCode.userFunc0x40085a0 = function GDJSInlineCode(runtimeScene) {
+};gdjs.MenuMapCode.userFunc0x7bc5620 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 //Defs
 const appId = "dce1f803-1a91-466a-b762-50dcff8bc764";
@@ -310,7 +310,7 @@ let isConditionTrue_0 = false;
 {
 
 
-gdjs.MenuMapCode.userFunc0x40085a0(runtimeScene);
+gdjs.MenuMapCode.userFunc0x7bc5620(runtimeScene);
 
 }
 
@@ -322,7 +322,7 @@ gdjs.MenuMapCode.userFunc0x40085a0(runtimeScene);
 
 let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
-{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(69159332);
+{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(14773372);
 }
 if (isConditionTrue_0) {
 
@@ -333,7 +333,7 @@ gdjs.MenuMapCode.eventsList7(runtimeScene);} //End of subevents
 }
 
 
-};gdjs.MenuMapCode.userFunc0x3f03568 = function GDJSInlineCode(runtimeScene) {
+};gdjs.MenuMapCode.userFunc0x7bc8b38 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 /*
 curl: https://api.hyplay.com/v1/apps/{appId}/leaderboards/{leaderboardId}/scores
@@ -457,7 +457,7 @@ let isConditionTrue_0 = false;
 {
 
 
-gdjs.MenuMapCode.userFunc0x3f03568(runtimeScene);
+gdjs.MenuMapCode.userFunc0x7bc8b38(runtimeScene);
 
 }
 

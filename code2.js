@@ -122,7 +122,7 @@ let isConditionTrue_0 = false;
 }
 
 
-};gdjs.LeaderboardCode.asyncCallback15736140 = function (runtimeScene, asyncObjectsList) {
+};gdjs.LeaderboardCode.asyncCallback17826236 = function (runtimeScene, asyncObjectsList) {
 asyncObjectsList.restoreLocalVariablesContainers(gdjs.LeaderboardCode.localVariables);
 gdjs.copyArray(asyncObjectsList.getObjects("BlueButton"), gdjs.LeaderboardCode.GDBlueButtonObjects5);
 
@@ -145,7 +145,7 @@ const parentAsyncObjectsList = asyncObjectsList;
 const asyncObjectsList = gdjs.LongLivedObjectsList.from(parentAsyncObjectsList);
 asyncObjectsList.backupLocalVariablesContainers(gdjs.LeaderboardCode.localVariables);
 /* Don't save BlueButton as it will be provided by the parent asyncObjectsList. */
-runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(3), (runtimeScene) => (gdjs.LeaderboardCode.asyncCallback15736140(runtimeScene, asyncObjectsList)));
+runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(3), (runtimeScene) => (gdjs.LeaderboardCode.asyncCallback17826236(runtimeScene, asyncObjectsList)));
 }
 }
 
@@ -174,7 +174,7 @@ gdjs.LeaderboardCode.eventsList1(runtimeScene, asyncObjectsList);} //End of sube
 }
 
 
-};gdjs.LeaderboardCode.asyncCallback15735236 = function (runtimeScene, asyncObjectsList) {
+};gdjs.LeaderboardCode.asyncCallback17825332 = function (runtimeScene, asyncObjectsList) {
 asyncObjectsList.restoreLocalVariablesContainers(gdjs.LeaderboardCode.localVariables);
 {/* Unknown instruction - skipped. */}
 { //Subevents
@@ -191,7 +191,7 @@ gdjs.LeaderboardCode.eventsList3 = function(runtimeScene) {
 const asyncObjectsList = new gdjs.LongLivedObjectsList();
 asyncObjectsList.backupLocalVariablesContainers(gdjs.LeaderboardCode.localVariables);
 for (const obj of gdjs.LeaderboardCode.GDBlueButtonObjects2) asyncObjectsList.addObject("BlueButton", obj);
-runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(3), (runtimeScene) => (gdjs.LeaderboardCode.asyncCallback15735236(runtimeScene, asyncObjectsList)));
+runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(3), (runtimeScene) => (gdjs.LeaderboardCode.asyncCallback17825332(runtimeScene, asyncObjectsList)));
 }
 }
 

@@ -393,7 +393,7 @@ gdjs.MenuMapCode.eventsList9(runtimeScene);} //End of subevents
 }
 
 
-};gdjs.MenuMapCode.userFunc0x8b5e548 = function GDJSInlineCode(runtimeScene) {
+};gdjs.MenuMapCode.userFunc0x90fb3b8 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 //Defs
 const appId = "dce1f803-1a91-466a-b762-50dcff8bc764";
@@ -430,19 +430,22 @@ async function getPlayerScore() {
             console.log("Get player score :: Link response> totalScores: " + data);
              
             //buildLeaderBoard(6,2);
+            runtimeScene.getGame().getVariables().get("fullScore").setNumber(0);
           }
   } catch (error) {
     console.error('Get player score :: Error al obtener el estado de la aplicación:', error);
     
   }
 }
+
+getPlayerScore();
 };
 gdjs.MenuMapCode.eventsList11 = function(runtimeScene, asyncObjectsList) {
 
 {
 
 
-gdjs.MenuMapCode.userFunc0x8b5e548(runtimeScene);
+gdjs.MenuMapCode.userFunc0x90fb3b8(runtimeScene);
 
 }
 
@@ -470,7 +473,7 @@ runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(1), 
 }
 
 
-};gdjs.MenuMapCode.userFunc0x8b5d490 = function GDJSInlineCode(runtimeScene) {
+};gdjs.MenuMapCode.userFunc0x90fa328 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 /*
 curl: https://api.hyplay.com/v1/apps/{appId}/leaderboards/{leaderboardId}/scores
@@ -598,7 +601,7 @@ let isConditionTrue_0 = false;
 {
 
 
-gdjs.MenuMapCode.userFunc0x8b5d490(runtimeScene);
+gdjs.MenuMapCode.userFunc0x90fa328(runtimeScene);
 
 }
 

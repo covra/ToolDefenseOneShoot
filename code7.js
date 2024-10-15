@@ -979,7 +979,7 @@ gdjs.level3Code.eventsList12(runtimeScene);} //End of subevents
 }
 
 
-};gdjs.level3Code.userFunc0x8b30398 = function GDJSInlineCode(runtimeScene, objects) {
+};gdjs.level3Code.userFunc0x9160a10 = function GDJSInlineCode(runtimeScene, objects) {
 "use strict";
 //Definiciones
 const nodoFin = runtimeScene.getVariables().get("numNodoFinal").getAsNumber();
@@ -1102,7 +1102,7 @@ gdjs.copyArray(runtimeScene.getObjects("spr_nodo"), gdjs.level3Code.GDspr_9595no
 
 var objects = [];
 objects.push.apply(objects,gdjs.level3Code.GDspr_9595nodoObjects1);
-gdjs.level3Code.userFunc0x8b30398(runtimeScene, objects);
+gdjs.level3Code.userFunc0x9160a10(runtimeScene, objects);
 
 }
 
@@ -1172,7 +1172,7 @@ gdjs.copyArray(runtimeScene.getObjects("spr_firstpos"), gdjs.level3Code.GDspr_95
 }
 
 
-};gdjs.level3Code.userFunc0x8b1d138 = function GDJSInlineCode(runtimeScene, objects) {
+};gdjs.level3Code.userFunc0x9161698 = function GDJSInlineCode(runtimeScene, objects) {
 "use strict";
 //Defs
 const intT = runtimeScene.getVariables().get("param_intervCheckNpcs").getAsNumber();
@@ -1237,7 +1237,7 @@ gdjs.copyArray(runtimeScene.getObjects("spr_npcv2"), gdjs.level3Code.GDspr_9595n
 
 var objects = [];
 objects.push.apply(objects,gdjs.level3Code.GDspr_9595npcv2Objects1);
-gdjs.level3Code.userFunc0x8b1d138(runtimeScene, objects);
+gdjs.level3Code.userFunc0x9161698(runtimeScene, objects);
 
 }
 
@@ -1803,7 +1803,7 @@ gdjs.level3Code.eventsList32(runtimeScene);} //End of subevents
 }
 
 
-};gdjs.level3Code.userFunc0x8b1baa8 = function GDJSInlineCode(runtimeScene, objects) {
+};gdjs.level3Code.userFunc0x9165670 = function GDJSInlineCode(runtimeScene, objects) {
 "use strict";
 //Defs
 const dist = runtimeScene.getVariables().get("debug_distAccion").getAsNumber();
@@ -1893,7 +1893,7 @@ gdjs.copyArray(runtimeScene.getObjects("txt_debug1"), gdjs.level3Code.GDtxt_9595
 
 var objects = [];
 objects.push.apply(objects,gdjs.level3Code.GDtxt_9595debug1Objects1);
-gdjs.level3Code.userFunc0x8b1baa8(runtimeScene, objects);
+gdjs.level3Code.userFunc0x9165670(runtimeScene, objects);
 
 }
 

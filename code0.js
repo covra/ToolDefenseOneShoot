@@ -151,7 +151,7 @@ gdjs.LoginHyplayCode.eventsList0(runtimeScene);} //End of subevents
 }
 
 
-};gdjs.LoginHyplayCode.userFunc0x1f88990 = function GDJSInlineCode(runtimeScene, objects) {
+};gdjs.LoginHyplayCode.userFunc0x446f4d8 = function GDJSInlineCode(runtimeScene, objects) {
 "use strict";
     var appId = "dce1f803-1a91-466a-b762-50dcff8bc764"; //id del juego de naves
     //var appId = "b15e49b1-db6d-43cc-8f7c-ee157a517da2"; //juego de oneshoot
@@ -217,7 +217,7 @@ gdjs.copyArray(runtimeScene.getObjects("txt_debug1"), gdjs.LoginHyplayCode.GDtxt
 
 var objects = [];
 objects.push.apply(objects,gdjs.LoginHyplayCode.GDtxt_9595debug1Objects2);
-gdjs.LoginHyplayCode.userFunc0x1f88990(runtimeScene, objects);
+gdjs.LoginHyplayCode.userFunc0x446f4d8(runtimeScene, objects);
 
 }
 
@@ -318,7 +318,7 @@ gdjs.LoginHyplayCode.eventsList5(runtimeScene);} //End of subevents
 }
 
 
-};gdjs.LoginHyplayCode.userFunc0x1a07c98 = function GDJSInlineCode(runtimeScene) {
+};gdjs.LoginHyplayCode.userFunc0x4478988 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 setTimeout(()=>{
     //Get info variables from response
@@ -396,7 +396,7 @@ let isConditionTrue_0 = false;
 {
 
 
-gdjs.LoginHyplayCode.userFunc0x1a07c98(runtimeScene);
+gdjs.LoginHyplayCode.userFunc0x4478988(runtimeScene);
 
 }
 

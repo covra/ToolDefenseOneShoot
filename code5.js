@@ -983,7 +983,7 @@ gdjs.level1Code.eventsList12(runtimeScene);} //End of subevents
 }
 
 
-};gdjs.level1Code.userFunc0x25f6330 = function GDJSInlineCode(runtimeScene, objects) {
+};gdjs.level1Code.userFunc0xf21798 = function GDJSInlineCode(runtimeScene, objects) {
 "use strict";
 //Definiciones
 const nodoFin = runtimeScene.getVariables().get("numNodoFinal").getAsNumber();
@@ -1106,7 +1106,7 @@ gdjs.copyArray(runtimeScene.getObjects("spr_nodo"), gdjs.level1Code.GDspr_9595no
 
 var objects = [];
 objects.push.apply(objects,gdjs.level1Code.GDspr_9595nodoObjects1);
-gdjs.level1Code.userFunc0x25f6330(runtimeScene, objects);
+gdjs.level1Code.userFunc0xf21798(runtimeScene, objects);
 
 }
 
@@ -1176,7 +1176,7 @@ gdjs.copyArray(runtimeScene.getObjects("spr_firstpos"), gdjs.level1Code.GDspr_95
 }
 
 
-};gdjs.level1Code.userFunc0x1bc6d08 = function GDJSInlineCode(runtimeScene, objects) {
+};gdjs.level1Code.userFunc0xf22420 = function GDJSInlineCode(runtimeScene, objects) {
 "use strict";
 //Defs
 const intT = runtimeScene.getVariables().get("param_intervCheckNpcs").getAsNumber();
@@ -1241,7 +1241,7 @@ gdjs.copyArray(runtimeScene.getObjects("spr_npcv2"), gdjs.level1Code.GDspr_9595n
 
 var objects = [];
 objects.push.apply(objects,gdjs.level1Code.GDspr_9595npcv2Objects1);
-gdjs.level1Code.userFunc0x1bc6d08(runtimeScene, objects);
+gdjs.level1Code.userFunc0xf22420(runtimeScene, objects);
 
 }
 
@@ -1422,7 +1422,64 @@ runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(0.5)
 }
 
 
-};gdjs.level1Code.asyncCallback13842076 = function (runtimeScene, asyncObjectsList) {
+};gdjs.level1Code.userFunc0xf23e90 = function GDJSInlineCode(runtimeScene) {
+"use strict";
+//Defs
+let globalUserStruct = runtimeScene.getGame().getVariables().get("currentUser");
+let idGlobal = globalUserStruct.getChildNamed("id").getAsString();
+let usernameGlobal = globalUserStruct.getChildNamed("username").getAsString();
+let currentScore = runtimeScene.getGame().getVariables().get("fullScore").getAsNumber();
+let newScore = runtimeScene.getVariables().get("killed").getAsNumber();
+let newSc = currentScore + newScore;
+runtimeScene.getGame().getVariables().get("fullScore").setNumber(newSc);
+
+console.log("WIN SCORE :: prev: " + currentScore + " thisLevelScore: " + newScore + " TOTAL: "+ runtimeScene.getGame().getVariables().get("fullScore").getAsNumber());
+console.log("WIN SCORE data player:  id: " + idGlobal + " usernameGlobal: " + usernameGlobal);
+let urlToFetch = "https://api.hyplay.com/v1/apps/dce1f803-1a91-466a-b762-50dcff8bc764/leaderboards/c1742478-90c4-4bf6-ba06-32969a95055a/scores"
+//Funcion asincrona de peticion a la url
+async function setPlayerScore() {
+  try {
+    const response = await fetch(urlToFetch, {
+      method: 'POST',
+      headers: {
+        "accept": "application/json",
+        "content-type" : "application/json",
+        "x-app-authorization" : "app_sk_9n9uSZimF_gz4O0g6Zt__NV0azfiigWqyiAHyqGfw03bz7OGB5TOK1JQZIiMM8HS",
+        "x-session-authorization" : "user_at_kKbC7274_LV1SU4bHupVLzZglUEgUcluxE9ocauom_eA0PY7r-hoPszGqke5cNRz",
+      },
+      body : JSON.stringify({
+          "score": newSc,
+          "userId": idGlobal
+      })
+    });
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+      
+    }
+    const data = await response.json();
+    //Respuesta de Hyplay
+    console.log("Set player score :: Get score  :: response: ",data); 
+
+          if (data == undefined ) {
+              console.log(" Undefined data response => Error");
+          } else {
+            console.log("Set player score :: Link response> totalScores: " + data);
+             
+            //buildLeaderBoard(6,2);
+            //runtimeScene.getGame().getVariables().get("fullScore").setNumber(data.score);
+            //let nfoPlayer = runtimeScene.getObjects("txt_playerInfo")[0];
+            //nfoPlayer.setString(usernameGlobal + " : " + data.score)
+
+          }
+  } catch (error) {
+    console.error('Get player score :: Error al obtener el estado de la aplicación:', error);
+    
+  }
+}
+
+setPlayerScore();
+};
+gdjs.level1Code.asyncCallback13842076 = function (runtimeScene, asyncObjectsList) {
 asyncObjectsList.restoreLocalVariablesContainers(gdjs.level1Code.localVariables);
 {gdjs.evtTools.runtimeScene.replaceScene(runtimeScene, "MenuMap", true);
 }gdjs.level1Code.localVariables.length = 0;
@@ -1500,6 +1557,14 @@ gdjs.copyArray(runtimeScene.getObjects("spr_npcv2"), gdjs.level1Code.GDspr_9595n
 { //Subevents
 gdjs.level1Code.eventsList23(runtimeScene);} //End of subevents
 }
+
+}
+
+
+{
+
+
+gdjs.level1Code.userFunc0xf23e90(runtimeScene);
 
 }
 
@@ -1816,7 +1881,7 @@ gdjs.level1Code.eventsList32(runtimeScene);} //End of subevents
 }
 
 
-};gdjs.level1Code.userFunc0x22f4d60 = function GDJSInlineCode(runtimeScene, objects) {
+};gdjs.level1Code.userFunc0x20bb108 = function GDJSInlineCode(runtimeScene, objects) {
 "use strict";
 //Defs
 const dist = runtimeScene.getVariables().get("debug_distAccion").getAsNumber();
@@ -1908,7 +1973,7 @@ gdjs.copyArray(runtimeScene.getObjects("txt_debug1"), gdjs.level1Code.GDtxt_9595
 
 var objects = [];
 objects.push.apply(objects,gdjs.level1Code.GDtxt_9595debug1Objects1);
-gdjs.level1Code.userFunc0x22f4d60(runtimeScene, objects);
+gdjs.level1Code.userFunc0x20bb108(runtimeScene, objects);
 
 }
 

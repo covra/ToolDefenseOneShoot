@@ -982,7 +982,7 @@ gdjs.level0Code.eventsList12(runtimeScene);} //End of subevents
 }
 
 
-};gdjs.level0Code.userFunc0x1bd84a0 = function GDJSInlineCode(runtimeScene, objects) {
+};gdjs.level0Code.userFunc0xf0e4b0 = function GDJSInlineCode(runtimeScene, objects) {
 "use strict";
 //Definiciones
 const nodoFin = runtimeScene.getVariables().get("numNodoFinal").getAsNumber();
@@ -1105,7 +1105,7 @@ gdjs.copyArray(runtimeScene.getObjects("spr_nodo"), gdjs.level0Code.GDspr_9595no
 
 var objects = [];
 objects.push.apply(objects,gdjs.level0Code.GDspr_9595nodoObjects1);
-gdjs.level0Code.userFunc0x1bd84a0(runtimeScene, objects);
+gdjs.level0Code.userFunc0xf0e4b0(runtimeScene, objects);
 
 }
 
@@ -1175,7 +1175,7 @@ gdjs.copyArray(runtimeScene.getObjects("spr_firstpos"), gdjs.level0Code.GDspr_95
 }
 
 
-};gdjs.level0Code.userFunc0x1bb9228 = function GDJSInlineCode(runtimeScene, objects) {
+};gdjs.level0Code.userFunc0xf0f138 = function GDJSInlineCode(runtimeScene, objects) {
 "use strict";
 //Defs
 const intT = runtimeScene.getVariables().get("param_intervCheckNpcs").getAsNumber();
@@ -1240,7 +1240,7 @@ gdjs.copyArray(runtimeScene.getObjects("spr_npcv2"), gdjs.level0Code.GDspr_9595n
 
 var objects = [];
 objects.push.apply(objects,gdjs.level0Code.GDspr_9595npcv2Objects1);
-gdjs.level0Code.userFunc0x1bb9228(runtimeScene, objects);
+gdjs.level0Code.userFunc0xf0f138(runtimeScene, objects);
 
 }
 
@@ -1384,7 +1384,7 @@ runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(1), 
 }
 
 
-};gdjs.level0Code.userFunc0x216c950 = function GDJSInlineCode(runtimeScene) {
+};gdjs.level0Code.userFunc0xf17cf0 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 //Defs
 let globalUserStruct = runtimeScene.getGame().getVariables().get("currentUser");
@@ -1396,6 +1396,7 @@ let newSc = currentScore + newScore;
 runtimeScene.getGame().getVariables().get("fullScore").setNumber(newSc);
 
 console.log("WIN SCORE :: prev: " + currentScore + " thisLevelScore: " + newScore + " TOTAL: "+ runtimeScene.getGame().getVariables().get("fullScore").getAsNumber());
+console.log("WIN SCORE data player:  id: " + idGlobal + " usernameGlobal: " + usernameGlobal);
 let urlToFetch = "https://api.hyplay.com/v1/apps/dce1f803-1a91-466a-b762-50dcff8bc764/leaderboards/c1742478-90c4-4bf6-ba06-32969a95055a/scores"
 //Funcion asincrona de peticion a la url
 async function setPlayerScore() {
@@ -1408,10 +1409,10 @@ async function setPlayerScore() {
         "x-app-authorization" : "app_sk_9n9uSZimF_gz4O0g6Zt__NV0azfiigWqyiAHyqGfw03bz7OGB5TOK1JQZIiMM8HS",
         "x-session-authorization" : "user_at_kKbC7274_LV1SU4bHupVLzZglUEgUcluxE9ocauom_eA0PY7r-hoPszGqke5cNRz",
       },
-      body : {
+      body : JSON.stringify({
           "score": newSc,
           "userId": idGlobal
-      }
+      })
     });
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
@@ -1467,7 +1468,7 @@ runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(4), 
 {
 
 
-gdjs.level0Code.userFunc0x216c950(runtimeScene);
+gdjs.level0Code.userFunc0xf17cf0(runtimeScene);
 
 }
 
@@ -1892,7 +1893,7 @@ gdjs.level0Code.eventsList33(runtimeScene);} //End of subevents
 }
 
 
-};gdjs.level0Code.userFunc0x23dade8 = function GDJSInlineCode(runtimeScene, objects) {
+};gdjs.level0Code.userFunc0xf133e8 = function GDJSInlineCode(runtimeScene, objects) {
 "use strict";
 //Defs
 const dist = runtimeScene.getVariables().get("debug_distAccion").getAsNumber();
@@ -1984,7 +1985,7 @@ gdjs.copyArray(runtimeScene.getObjects("txt_debug1"), gdjs.level0Code.GDtxt_9595
 
 var objects = [];
 objects.push.apply(objects,gdjs.level0Code.GDtxt_9595debug1Objects1);
-gdjs.level0Code.userFunc0x23dade8(runtimeScene, objects);
+gdjs.level0Code.userFunc0xf133e8(runtimeScene, objects);
 
 }
 

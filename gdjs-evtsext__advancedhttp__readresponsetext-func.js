@@ -8,7 +8,7 @@ if (typeof gdjs.evtsExt__AdvancedHTTP__ReadResponseText !== "undefined") {
 gdjs.evtsExt__AdvancedHTTP__ReadResponseText = {};
 
 
-gdjs.evtsExt__AdvancedHTTP__ReadResponseText.userFunc0x97e908 = function GDJSInlineCode(runtimeScene, eventsFunctionContext) {
+gdjs.evtsExt__AdvancedHTTP__ReadResponseText.userFunc0x906248 = function GDJSInlineCode(runtimeScene, eventsFunctionContext) {
 "use strict";
 const logger = (this.logger || (this.logger = new gdjs.Logger("Advanced HTTP")));
 const advancedHTTP = (gdjs._advancedHTTP || (gdjs._advancedHTTP = { responses: new Map(), id: 1 }));
@@ -52,7 +52,7 @@ gdjs.evtsExt__AdvancedHTTP__ReadResponseText.eventsList0 = function(runtimeScene
 {
 
 
-gdjs.evtsExt__AdvancedHTTP__ReadResponseText.userFunc0x97e908(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
+gdjs.evtsExt__AdvancedHTTP__ReadResponseText.userFunc0x906248(runtimeScene, typeof eventsFunctionContext !== 'undefined' ? eventsFunctionContext : undefined);
 
 }
 

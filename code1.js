@@ -393,7 +393,7 @@ gdjs.MenuMapCode.eventsList9(runtimeScene);} //End of subevents
 }
 
 
-};gdjs.MenuMapCode.userFunc0xeac6d0 = function GDJSInlineCode(runtimeScene) {
+};gdjs.MenuMapCode.userFunc0x1c6a898 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 //Defs
 const appId = "dce1f803-1a91-466a-b762-50dcff8bc764";
@@ -448,7 +448,7 @@ gdjs.MenuMapCode.eventsList11 = function(runtimeScene, asyncObjectsList) {
 {
 
 
-gdjs.MenuMapCode.userFunc0xeac6d0(runtimeScene);
+gdjs.MenuMapCode.userFunc0x1c6a898(runtimeScene);
 
 }
 
@@ -476,7 +476,7 @@ runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(1), 
 }
 
 
-};gdjs.MenuMapCode.userFunc0xeab6a8 = function GDJSInlineCode(runtimeScene) {
+};gdjs.MenuMapCode.userFunc0x1bc4b60 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 /*
 curl: https://api.hyplay.com/v1/apps/{appId}/leaderboards/{leaderboardId}/scores
@@ -604,7 +604,7 @@ let isConditionTrue_0 = false;
 {
 
 
-gdjs.MenuMapCode.userFunc0xeab6a8(runtimeScene);
+gdjs.MenuMapCode.userFunc0x1bc4b60(runtimeScene);
 
 }
 

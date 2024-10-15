@@ -983,7 +983,7 @@ gdjs.level1Code.eventsList12(runtimeScene);} //End of subevents
 }
 
 
-};gdjs.level1Code.userFunc0xf21798 = function GDJSInlineCode(runtimeScene, objects) {
+};gdjs.level1Code.userFunc0x1ab98b8 = function GDJSInlineCode(runtimeScene, objects) {
 "use strict";
 //Definiciones
 const nodoFin = runtimeScene.getVariables().get("numNodoFinal").getAsNumber();
@@ -1106,7 +1106,7 @@ gdjs.copyArray(runtimeScene.getObjects("spr_nodo"), gdjs.level1Code.GDspr_9595no
 
 var objects = [];
 objects.push.apply(objects,gdjs.level1Code.GDspr_9595nodoObjects1);
-gdjs.level1Code.userFunc0xf21798(runtimeScene, objects);
+gdjs.level1Code.userFunc0x1ab98b8(runtimeScene, objects);
 
 }
 
@@ -1176,7 +1176,7 @@ gdjs.copyArray(runtimeScene.getObjects("spr_firstpos"), gdjs.level1Code.GDspr_95
 }
 
 
-};gdjs.level1Code.userFunc0xf22420 = function GDJSInlineCode(runtimeScene, objects) {
+};gdjs.level1Code.userFunc0x1ab5b20 = function GDJSInlineCode(runtimeScene, objects) {
 "use strict";
 //Defs
 const intT = runtimeScene.getVariables().get("param_intervCheckNpcs").getAsNumber();
@@ -1241,7 +1241,7 @@ gdjs.copyArray(runtimeScene.getObjects("spr_npcv2"), gdjs.level1Code.GDspr_9595n
 
 var objects = [];
 objects.push.apply(objects,gdjs.level1Code.GDspr_9595npcv2Objects1);
-gdjs.level1Code.userFunc0xf22420(runtimeScene, objects);
+gdjs.level1Code.userFunc0x1ab5b20(runtimeScene, objects);
 
 }
 
@@ -1422,7 +1422,7 @@ runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(0.5)
 }
 
 
-};gdjs.level1Code.userFunc0xf23e90 = function GDJSInlineCode(runtimeScene) {
+};gdjs.level1Code.userFunc0x21cc498 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 //Defs
 let globalUserStruct = runtimeScene.getGame().getVariables().get("currentUser");
@@ -1564,7 +1564,7 @@ gdjs.level1Code.eventsList23(runtimeScene);} //End of subevents
 {
 
 
-gdjs.level1Code.userFunc0xf23e90(runtimeScene);
+gdjs.level1Code.userFunc0x21cc498(runtimeScene);
 
 }
 
@@ -1724,14 +1724,8 @@ gdjs.level1Code.eventsList29(runtimeScene);} //End of subevents
 
 let isConditionTrue_0 = false;
 {
-gdjs.copyArray(runtimeScene.getObjects("spr_aimtarget"), gdjs.level1Code.GDspr_9595aimtargetObjects1);
 /* Reuse gdjs.level1Code.GDspr_9595tool_9595testkillObjects1 */
-{for(var i = 0, len = gdjs.level1Code.GDspr_9595aimtargetObjects1.length ;i < len;++i) {
-    gdjs.level1Code.GDspr_9595aimtargetObjects1[i].hide();
-}
-}{runtimeScene.getScene().getVariables().getFromIndex(24).setBoolean(false);
-}{runtimeScene.getScene().getVariables().getFromIndex(23).setBoolean(false);
-}{for(var i = 0, len = gdjs.level1Code.GDspr_9595tool_9595testkillObjects1.length ;i < len;++i) {
+{for(var i = 0, len = gdjs.level1Code.GDspr_9595tool_9595testkillObjects1.length ;i < len;++i) {
     gdjs.level1Code.GDspr_9595tool_9595testkillObjects1[i].hide(false);
 }
 }}
@@ -1873,7 +1867,13 @@ isConditionTrue_0 = false;
 isConditionTrue_0 = gdjs.evtTools.variable.getVariableBoolean(runtimeScene.getScene().getVariables().getFromIndex(24), true, false);
 }
 if (isConditionTrue_0) {
-
+gdjs.copyArray(runtimeScene.getObjects("spr_aimtarget"), gdjs.level1Code.GDspr_9595aimtargetObjects1);
+{runtimeScene.getScene().getVariables().getFromIndex(24).setBoolean(false);
+}{runtimeScene.getScene().getVariables().getFromIndex(23).setBoolean(false);
+}{for(var i = 0, len = gdjs.level1Code.GDspr_9595aimtargetObjects1.length ;i < len;++i) {
+    gdjs.level1Code.GDspr_9595aimtargetObjects1[i].hide();
+}
+}
 { //Subevents
 gdjs.level1Code.eventsList32(runtimeScene);} //End of subevents
 }
@@ -1881,7 +1881,7 @@ gdjs.level1Code.eventsList32(runtimeScene);} //End of subevents
 }
 
 
-};gdjs.level1Code.userFunc0x20bb108 = function GDJSInlineCode(runtimeScene, objects) {
+};gdjs.level1Code.userFunc0x1e313d0 = function GDJSInlineCode(runtimeScene, objects) {
 "use strict";
 //Defs
 const dist = runtimeScene.getVariables().get("debug_distAccion").getAsNumber();
@@ -1973,7 +1973,7 @@ gdjs.copyArray(runtimeScene.getObjects("txt_debug1"), gdjs.level1Code.GDtxt_9595
 
 var objects = [];
 objects.push.apply(objects,gdjs.level1Code.GDtxt_9595debug1Objects1);
-gdjs.level1Code.userFunc0x20bb108(runtimeScene, objects);
+gdjs.level1Code.userFunc0x1e313d0(runtimeScene, objects);
 
 }
 

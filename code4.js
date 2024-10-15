@@ -982,7 +982,7 @@ gdjs.level0Code.eventsList12(runtimeScene);} //End of subevents
 }
 
 
-};gdjs.level0Code.userFunc0xf0e4b0 = function GDJSInlineCode(runtimeScene, objects) {
+};gdjs.level0Code.userFunc0x1a07f00 = function GDJSInlineCode(runtimeScene, objects) {
 "use strict";
 //Definiciones
 const nodoFin = runtimeScene.getVariables().get("numNodoFinal").getAsNumber();
@@ -1105,7 +1105,7 @@ gdjs.copyArray(runtimeScene.getObjects("spr_nodo"), gdjs.level0Code.GDspr_9595no
 
 var objects = [];
 objects.push.apply(objects,gdjs.level0Code.GDspr_9595nodoObjects1);
-gdjs.level0Code.userFunc0xf0e4b0(runtimeScene, objects);
+gdjs.level0Code.userFunc0x1a07f00(runtimeScene, objects);
 
 }
 
@@ -1175,7 +1175,7 @@ gdjs.copyArray(runtimeScene.getObjects("spr_firstpos"), gdjs.level0Code.GDspr_95
 }
 
 
-};gdjs.level0Code.userFunc0xf0f138 = function GDJSInlineCode(runtimeScene, objects) {
+};gdjs.level0Code.userFunc0x1b80640 = function GDJSInlineCode(runtimeScene, objects) {
 "use strict";
 //Defs
 const intT = runtimeScene.getVariables().get("param_intervCheckNpcs").getAsNumber();
@@ -1240,7 +1240,7 @@ gdjs.copyArray(runtimeScene.getObjects("spr_npcv2"), gdjs.level0Code.GDspr_9595n
 
 var objects = [];
 objects.push.apply(objects,gdjs.level0Code.GDspr_9595npcv2Objects1);
-gdjs.level0Code.userFunc0xf0f138(runtimeScene, objects);
+gdjs.level0Code.userFunc0x1b80640(runtimeScene, objects);
 
 }
 
@@ -1384,7 +1384,7 @@ runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(1), 
 }
 
 
-};gdjs.level0Code.userFunc0xf17cf0 = function GDJSInlineCode(runtimeScene) {
+};gdjs.level0Code.userFunc0x233cd70 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 //Defs
 let globalUserStruct = runtimeScene.getGame().getVariables().get("currentUser");
@@ -1468,7 +1468,7 @@ runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(4), 
 {
 
 
-gdjs.level0Code.userFunc0xf17cf0(runtimeScene);
+gdjs.level0Code.userFunc0x233cd70(runtimeScene);
 
 }
 
@@ -1736,14 +1736,8 @@ gdjs.level0Code.eventsList30(runtimeScene);} //End of subevents
 
 let isConditionTrue_0 = false;
 {
-gdjs.copyArray(runtimeScene.getObjects("spr_aimtarget"), gdjs.level0Code.GDspr_9595aimtargetObjects1);
 /* Reuse gdjs.level0Code.GDspr_9595tool_9595testkillObjects1 */
-{for(var i = 0, len = gdjs.level0Code.GDspr_9595aimtargetObjects1.length ;i < len;++i) {
-    gdjs.level0Code.GDspr_9595aimtargetObjects1[i].hide();
-}
-}{runtimeScene.getScene().getVariables().getFromIndex(24).setBoolean(false);
-}{runtimeScene.getScene().getVariables().getFromIndex(23).setBoolean(false);
-}{for(var i = 0, len = gdjs.level0Code.GDspr_9595tool_9595testkillObjects1.length ;i < len;++i) {
+{for(var i = 0, len = gdjs.level0Code.GDspr_9595tool_9595testkillObjects1.length ;i < len;++i) {
     gdjs.level0Code.GDspr_9595tool_9595testkillObjects1[i].hide(false);
 }
 }}
@@ -1885,7 +1879,13 @@ isConditionTrue_0 = false;
 isConditionTrue_0 = gdjs.evtTools.variable.getVariableBoolean(runtimeScene.getScene().getVariables().getFromIndex(24), true, false);
 }
 if (isConditionTrue_0) {
-
+gdjs.copyArray(runtimeScene.getObjects("spr_aimtarget"), gdjs.level0Code.GDspr_9595aimtargetObjects1);
+{for(var i = 0, len = gdjs.level0Code.GDspr_9595aimtargetObjects1.length ;i < len;++i) {
+    gdjs.level0Code.GDspr_9595aimtargetObjects1[i].hide();
+}
+}{runtimeScene.getScene().getVariables().getFromIndex(24).setBoolean(false);
+}{runtimeScene.getScene().getVariables().getFromIndex(23).setBoolean(false);
+}
 { //Subevents
 gdjs.level0Code.eventsList33(runtimeScene);} //End of subevents
 }
@@ -1893,7 +1893,7 @@ gdjs.level0Code.eventsList33(runtimeScene);} //End of subevents
 }
 
 
-};gdjs.level0Code.userFunc0xf133e8 = function GDJSInlineCode(runtimeScene, objects) {
+};gdjs.level0Code.userFunc0x23237e0 = function GDJSInlineCode(runtimeScene, objects) {
 "use strict";
 //Defs
 const dist = runtimeScene.getVariables().get("debug_distAccion").getAsNumber();
@@ -1985,7 +1985,7 @@ gdjs.copyArray(runtimeScene.getObjects("txt_debug1"), gdjs.level0Code.GDtxt_9595
 
 var objects = [];
 objects.push.apply(objects,gdjs.level0Code.GDtxt_9595debug1Objects1);
-gdjs.level0Code.userFunc0xf133e8(runtimeScene, objects);
+gdjs.level0Code.userFunc0x23237e0(runtimeScene, objects);
 
 }
 

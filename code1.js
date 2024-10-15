@@ -393,7 +393,7 @@ gdjs.MenuMapCode.eventsList9(runtimeScene);} //End of subevents
 }
 
 
-};gdjs.MenuMapCode.userFunc0x803df18 = function GDJSInlineCode(runtimeScene) {
+};gdjs.MenuMapCode.userFunc0x8b5e548 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 //Defs
 const appId = "dce1f803-1a91-466a-b762-50dcff8bc764";
@@ -437,45 +437,40 @@ async function getPlayerScore() {
   }
 }
 };
-gdjs.MenuMapCode.eventsList11 = function(runtimeScene) {
+gdjs.MenuMapCode.eventsList11 = function(runtimeScene, asyncObjectsList) {
 
 {
 
 
-let isConditionTrue_0 = false;
-{
-}
+gdjs.MenuMapCode.userFunc0x8b5e548(runtimeScene);
 
 }
 
 
-{
-
-
-gdjs.MenuMapCode.userFunc0x803df18(runtimeScene);
-
-}
-
-
-};gdjs.MenuMapCode.eventsList12 = function(runtimeScene) {
-
-{
-
-
-let isConditionTrue_0 = false;
-isConditionTrue_0 = false;
-{isConditionTrue_0 = runtimeScene.getOnceTriggers().triggerOnce(15683532);
-}
-if (isConditionTrue_0) {
+};gdjs.MenuMapCode.asyncCallback133082892 = function (runtimeScene, asyncObjectsList) {
+asyncObjectsList.restoreLocalVariablesContainers(gdjs.MenuMapCode.localVariables);
 
 { //Subevents
-gdjs.MenuMapCode.eventsList11(runtimeScene);} //End of subevents
+gdjs.MenuMapCode.eventsList11(runtimeScene, asyncObjectsList);} //End of subevents
+gdjs.MenuMapCode.localVariables.length = 0;
+}
+gdjs.MenuMapCode.eventsList12 = function(runtimeScene) {
+
+{
+
+
+{
+{
+const asyncObjectsList = new gdjs.LongLivedObjectsList();
+asyncObjectsList.backupLocalVariablesContainers(gdjs.MenuMapCode.localVariables);
+runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.runtimeScene.wait(1), (runtimeScene) => (gdjs.MenuMapCode.asyncCallback133082892(runtimeScene, asyncObjectsList)));
+}
 }
 
 }
 
 
-};gdjs.MenuMapCode.userFunc0x803ecc8 = function GDJSInlineCode(runtimeScene) {
+};gdjs.MenuMapCode.userFunc0x8b5d490 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 /*
 curl: https://api.hyplay.com/v1/apps/{appId}/leaderboards/{leaderboardId}/scores
@@ -533,10 +528,14 @@ function buildLeaderBoard (lines, dataScores) {
     lbPos = i+1
     offsetY = offsetIni + (lbPos * 50);
     let thiscore = dataScores[i];
-    if (thiscore == undefined || typeof thiscore == "object") {
+    if (thiscore == undefined) {
       thiscore = 0;
     }
-    newLine.setString(lbPos + ": USER---------->" + thiscore);
+    let nameUser = thiscore.username;
+    let scoreUser = thiscore.score;
+    if (nameUser == undefined) {nameUser = "EMPTY";}
+    if (scoreUser == undefined) {scoreUser = "0";}
+    newLine.setString(lbPos + ": "+ nameUser + "---------->" + scoreUser);
     newLine.setY(backg.y + offsetY);
     newLine.setX(backg.x + 20);
     newLine.setLayer("LDB");
@@ -599,7 +598,7 @@ let isConditionTrue_0 = false;
 {
 
 
-gdjs.MenuMapCode.userFunc0x803ecc8(runtimeScene);
+gdjs.MenuMapCode.userFunc0x8b5d490(runtimeScene);
 
 }
 
@@ -663,10 +662,6 @@ gdjs.copyArray(runtimeScene.getObjects("spr_backLDB"), gdjs.MenuMapCode.GDspr_95
 let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
 isConditionTrue_0 = gdjs.evtTools.runtimeScene.sceneJustBegins(runtimeScene);
-if (isConditionTrue_0) {
-isConditionTrue_0 = false;
-isConditionTrue_0 = gdjs.evtTools.variable.getVariableString(runtimeScene.getGame().getVariables().getFromIndex(1).getChild("username")) != "0";
-}
 if (isConditionTrue_0) {
 
 { //Subevents
